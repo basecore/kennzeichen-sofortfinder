@@ -1,28 +1,29 @@
-# Kennzeichen-Sofortfinder 🚗
+# Kennzeichen-Sofortfinder Europa 🚗
 
-**Version 1.1.1 · 30.09.2026**
+**Version 2.0.0 · 30.09.2026** · [Web-App](https://basecore.github.io/kennzeichen-sofortfinder/) · [GitHub-Projekt](https://github.com/basecore/kennzeichen-sofortfinder)
 
-Eine smartphoneoptimierte, werbefreie Progressive Web App: die ersten ein bis drei Buchstaben eines deutschen Kfz-Kennzeichens auf dem festen ABC-Feld antippen und sofort Ort beziehungsweise Kreis sehen. [App öffnen](https://basecore.github.io/kennzeichen-sofortfinder/) · [GitHub-Projekt](https://github.com/basecore/kennzeichen-sofortfinder)
+Smartphone-PWA für Kennzeichen: Deutschland ist vorausgewählt. Im Länder-Menü sind europäische Staaten und einige Sondergebiete mit Flagge und internationalem Länderkürzel aufgeführt. Auf der stilisierten Kennzeichenansicht steht der Ländercode links; nur für EU-Staaten wird statt der Landesflagge ein Sternsymbol verwendet. Dies ist eine Orientierungshilfe, keine exakte Reproduktion amtlicher Kennzeichen.
 
-## Bedienung
+## Bedienung und Wikipedia
 
-- Nach jedem Buchstaben erscheinen die passenden Kennzeichen sofort; ein exakt passendes Kürzel steht oben.
-- **Nur Buchstaben, mit denen sich das bisherige Kürzel zu einem vorhandenen Kennzeichen ergänzen lässt, bleiben hell und antippbar.** Alle anderen werden grau und sind deaktiviert. Das gilt auch am Anfang und nach jedem Zurücknehmen eines Buchstabens.
-- ⌫ entfernt den letzten Buchstaben, × beginnt eine neue Suche. Auch eine Hardwaretastatur beachtet die möglichen Folgebuchstaben.
-- Ein angetippter Treffer wird unter „Zuletzt angesehen“ lokal gespeichert; maximal acht Kürzel.
+Land wählen, mögliche Buchstaben antippen, Orts- oder Kreisbezeichnung lesen. Nicht mögliche nächste Buchstaben bleiben grau. Einen Treffer antippen, um ihn auf dem großen Kennzeichen zu übernehmen. Ein Tipp auf das große Kennzeichen öffnet Wikipedia in einem neuen Tab: bei ausgewähltem Ort eine Wikipedia-Suche nach diesem Ort (mit direktem Sprung, falls ein gleichnamiger Artikel existiert), sonst den Wikipedia-Artikel beziehungsweise die Suche zum Kennzeichensystem des gewählten Landes.
 
-## PWA und Veröffentlichung
+## Datenabdeckung und Grenzen
 
-Unter [Settings → Pages](https://github.com/basecore/kennzeichen-sofortfinder/settings/pages) „Deploy from a branch“, Branch `main`, Ordner `/(root)` wählen und speichern. Dann ist die [Web-App](https://basecore.github.io/kennzeichen-sofortfinder/) erreichbar. Beim ersten Besuch mit Internetverbindung laden; danach stehen gespeicherte Liste und App-Oberfläche auch offline bereit. Im Browser „Zum Startbildschirm hinzufügen“ beziehungsweise „App installieren“ wählen.
+- **Deutschland, Österreich und Schweiz:** regionale Codes aus [offene-daten/kennzeichen](https://github.com/offene-daten/kennzeichen), CC0. Diese Länder werden beim ersten Öffnen mit Internet geladen und lokal gespeichert.
+- **Polen:** polnische Kreis- und Stadtkürzel werden nach Länderwechsel aus [Wikipedia, „Vehicle registration plates of Poland“](https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Poland) ausgelesen und lokal gespeichert. Wenn Wikipedia nicht erreichbar ist oder die Tabellenstruktur wechselt, zeigt die App deutlich gekennzeichnet nur eine kleine integrierte Auswahl häufiger Codes. Der Wikipedia-Inhalt steht unter [CC BY-SA](https://en.wikipedia.org/wiki/Wikipedia:Copyrights); Quelle und Beitragende über den verlinkten Artikel und dessen Versionsgeschichte.
+- **Ukraine:** regionale Kürzel aus der [Wikipedia-Übersicht](https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Ukraine), einschließlich unterschiedlicher Ausgabeserien. Codes können mehrfach belegt sein; dann werden mehrere Treffer angezeigt. Dies sind Regionen, nicht immer Städte.
+- **Italien:** Die normalen Serienbuchstaben aktueller Schilder verraten keinen Herkunftsort. Die App kennt nur ausgewählte, fakultative Provinzcodes vom **rechten** blauen Streifen, etwa MI; ein fehlender Eintrag ist keine Aussage über die Gültigkeit des Kennzeichens. [Hintergrund bei Wikipedia](https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Italy).
+- **Alle weiteren Länder im Menü:** Länderkennung und Flagge werden angezeigt; ohne belastbar integrierte Ortsdaten werden **keine Städte geraten**. Tippen auf das Schild öffnet Informationen zum jeweiligen Kennzeichensystem auf Wikipedia. Sonder-, historische und individuell gestaltete Kennzeichen können abweichen.
 
-Das Logo und Favicon liegen als `icon.svg` vor. `icon-192.png`, `icon-512.png`, `icon-512-maskable.png` und `apple-touch-icon.png` werden vom Workflow `.github/workflows/icons.yml` mit `scripts/build_icons.py` erzeugt. Das Manifest beschreibt die Installation; `sw.js` speichert die Oberfläche. Bei jeder Änderung der App-Shell die Version im HTML und Service Worker anheben, damit die neue Oberfläche offline aktualisiert wird.
+Die Kennzeichenlisten stammen aus Communityquellen und können unvollständig oder veraltet sein. App-Version und Datum sind **nicht** der Datenstand. Ein Land mit nationaler Seriennummer kann aus den Buchstaben nicht geografisch entschlüsselt werden. Mehr zu den unterschiedlichen Systemen: [Europäische Kennzeichen](https://en.wikipedia.org/wiki/European_vehicle_registration_plate). Nicht während des Fahrens bedienen.
 
-## Daten und Grenzen
+## Installation und Pflege
 
-Die App lädt die deutsche Kennzeichenliste von [offene-daten/kennzeichen](https://github.com/offene-daten/kennzeichen) (CC0) über GitHub Raw, speichert sie im Browser und aktualisiert sie bei Verbindung. Ohne ersten Online-Ladevorgang oder nach dem Löschen von Browserdaten ist noch keine Liste vorhanden. Keine Anmeldung, keine Werbung und kein eigener Tracking-Server. **Das Versionsdatum ist kein Aktualitätsdatum der Kennzeichenliste.** Die Community-Daten können veraltet oder unvollständig sein; Mehrfachzuordnungen oder Auslaufstatus sind nicht sicher markiert. Für verbindliche Angaben siehe [KBA-Kennzeichenübersicht](https://www.kba.de/DE/Service/Kennzeichen/kennzeichen_node.html). Nicht während des Fahrens bedienen.
+Unter [Settings → Pages](https://github.com/basecore/kennzeichen-sofortfinder/settings/pages) „Deploy from a branch“, Branch `main`, Ordner `/(root)` aktivieren. App im Browser öffnen und „Zum Startbildschirm hinzufügen“ wählen. Für Deutschland, Österreich, Schweiz und Polen ist zum erstmaligen Laden der vollständigen Ortsliste eine Internetverbindung nötig; danach werden diese Daten lokal gespeichert. Die App-Oberfläche selbst wird vom Service Worker offline zwischengespeichert. Die bestehenden PNG-Icons (192, 512, maskierbar und Apple Touch), `icon.svg` und `manifest.webmanifest` bleiben erhalten. Bei Änderungen an der Oberfläche die Cache-Version in `sw.js` anheben.
 
 ## Versionsverlauf
 
-- **1.1.1 · 30.09.2026:** ABC-Tasten ohne passenden nächsten Kennzeichenbuchstaben werden dynamisch grau und nicht mehr antippbar.
-- **1.1.0 · 30.09.2026:** Logo, App-Icons, sichtbare Version, Projektlinks und mobile PWA-Gestaltung.
-- **1.0.0 · 30.09.2026:** ABC-Sofortsuche, Offline-Speicherung und GitHub-Pages-Grundgerüst.
+- **2.0.0 · 30.09.2026:** Europa-Länderauswahl, Flaggen und internationale Kürzel, landesspezifische Hinweise und Wikipedia-Link auf dem Kennzeichen.
+- **1.1.1 · 30.09.2026:** Unmögliche Folgebuchstaben ausgegraut.
+- **1.1.0 · 30.09.2026:** PWA-Logo, Icons und Dokumentation.
