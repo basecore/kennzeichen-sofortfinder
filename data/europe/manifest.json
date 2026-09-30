@@ -1,0 +1,284 @@
+{
+  "de": {
+    "status": "existing_local_community_list",
+    "path": "../de.yaml"
+  },
+  "at": {
+    "status": "existing_local_community_list",
+    "path": "../at.yaml"
+  },
+  "pl": {
+    "status": "wikidata_candidates_unverified",
+    "count": 4997,
+    "path": "pl.yaml"
+  },
+  "ua": {
+    "status": "wikidata_candidates_unverified",
+    "count": 1600,
+    "path": "ua.yaml"
+  },
+  "it": {
+    "status": "wikidata_candidates_unverified",
+    "count": 5000,
+    "path": "it.yaml"
+  },
+  "al": {
+    "status": "wikidata_candidates_unverified",
+    "count": 332,
+    "path": "al.yaml"
+  },
+  "ad": {
+    "status": "wikidata_candidates_unverified",
+    "count": 2,
+    "path": "ad.yaml"
+  },
+  "am": {
+    "status": "wikidata_candidates_unverified",
+    "count": 26,
+    "path": "am.yaml"
+  },
+  "az": {
+    "status": "wikidata_candidates_unverified",
+    "count": 237,
+    "path": "az.yaml"
+  },
+  "by": {
+    "status": "wikidata_candidates_unverified",
+    "count": 355,
+    "path": "by.yaml"
+  },
+  "be": {
+    "status": "wikidata_candidates_unverified",
+    "count": 1,
+    "path": "be.yaml"
+  },
+  "ba": {
+    "status": "wikidata_candidates_unverified",
+    "count": 0,
+    "path": "ba.yaml"
+  },
+  "bg": {
+    "status": "wikidata_candidates_unverified",
+    "count": 32,
+    "path": "bg.yaml"
+  },
+  "hr": {
+    "status": "wikidata_candidates_unverified",
+    "count": 181,
+    "path": "hr.yaml"
+  },
+  "cy": {
+    "status": "wikidata_candidates_unverified",
+    "count": 1,
+    "path": "cy.yaml"
+  },
+  "cz": {
+    "status": "wikidata_candidates_unverified",
+    "count": 5000,
+    "path": "cz.yaml"
+  },
+  "dk": {
+    "status": "wikidata_candidates_unverified",
+    "count": 1,
+    "path": "dk.yaml"
+  },
+  "ee": {
+    "status": "wikidata_candidates_unverified",
+    "count": 17,
+    "path": "ee.yaml"
+  },
+  "fi": {
+    "status": "wikidata_candidates_unverified",
+    "count": 4,
+    "path": "fi.yaml"
+  },
+  "fr": {
+    "status": "wikidata_candidates_unverified",
+    "count": 85,
+    "path": "fr.yaml"
+  },
+  "ge": {
+    "status": "wikidata_candidates_unverified",
+    "count": 30,
+    "path": "ge.yaml"
+  },
+  "gr": {
+    "status": "wikidata_candidates_unverified",
+    "count": 364,
+    "path": "gr.yaml"
+  },
+  "gi": {
+    "status": "wikidata_candidates_unverified",
+    "count": 0,
+    "path": "gi.yaml"
+  },
+  "gb": {
+    "status": "wikidata_candidates_unverified",
+    "count": 19,
+    "path": "gb.yaml"
+  },
+  "hu": {
+    "status": "wikidata_candidates_unverified",
+    "count": 1,
+    "path": "hu.yaml"
+  },
+  "is": {
+    "status": "wikidata_candidates_unverified",
+    "count": 1,
+    "path": "is.yaml"
+  },
+  "ie": {
+    "status": "wikidata_candidates_unverified",
+    "count": 36,
+    "path": "ie.yaml"
+  },
+  "kz": {
+    "status": "wikidata_candidates_unverified",
+    "count": 137,
+    "path": "kz.yaml"
+  },
+  "xk": {
+    "status": "wikidata_candidates_unverified",
+    "count": 2,
+    "path": "xk.yaml"
+  },
+  "lv": {
+    "status": "wikidata_candidates_unverified",
+    "count": 2,
+    "path": "lv.yaml"
+  },
+  "li": {
+    "status": "wikidata_candidates_unverified",
+    "count": 14,
+    "path": "li.yaml"
+  },
+  "lt": {
+    "status": "wikidata_candidates_unverified",
+    "count": 7,
+    "path": "lt.yaml"
+  },
+  "lu": {
+    "status": "wikidata_candidates_unverified",
+    "count": 1,
+    "path": "lu.yaml"
+  },
+  "mt": {
+    "status": "wikidata_candidates_unverified",
+    "count": 4,
+    "path": "mt.yaml"
+  },
+  "md": {
+    "status": "wikidata_candidates_unverified",
+    "count": 88,
+    "path": "md.yaml"
+  },
+  "mc": {
+    "status": "wikidata_candidates_unverified",
+    "count": 13,
+    "path": "mc.yaml"
+  },
+  "me": {
+    "status": "wikidata_candidates_unverified",
+    "count": 16,
+    "path": "me.yaml"
+  },
+  "nl": {
+    "status": "wikidata_candidates_unverified",
+    "count": 2,
+    "path": "nl.yaml"
+  },
+  "mk": {
+    "status": "wikidata_candidates_unverified",
+    "count": 59,
+    "path": "mk.yaml"
+  },
+  "no": {
+    "status": "wikidata_candidates_unverified",
+    "count": 2,
+    "path": "no.yaml"
+  },
+  "pt": {
+    "status": "wikidata_candidates_unverified",
+    "count": 4,
+    "path": "pt.yaml"
+  },
+  "ro": {
+    "status": "wikidata_candidates_unverified",
+    "count": 91,
+    "path": "ro.yaml"
+  },
+  "ru": {
+    "status": "wikidata_candidates_unverified",
+    "count": 732,
+    "path": "ru.yaml"
+  },
+  "sm": {
+    "status": "wikidata_candidates_unverified",
+    "count": 27,
+    "path": "sm.yaml"
+  },
+  "rs": {
+    "status": "wikidata_candidates_unverified",
+    "count": 568,
+    "path": "rs.yaml"
+  },
+  "sk": {
+    "status": "wikidata_candidates_unverified",
+    "count": 3025,
+    "path": "sk.yaml"
+  },
+  "si": {
+    "status": "wikidata_candidates_unverified",
+    "count": 237,
+    "path": "si.yaml"
+  },
+  "es": {
+    "status": "wikidata_candidates_unverified",
+    "count": 4996,
+    "path": "es.yaml"
+  },
+  "se": {
+    "status": "wikidata_candidates_unverified",
+    "count": 25,
+    "path": "se.yaml"
+  },
+  "ch": {
+    "status": "existing_local_community_list",
+    "path": "../ch.yaml"
+  },
+  "tr": {
+    "status": "wikidata_candidates_unverified",
+    "count": 5000,
+    "path": "tr.yaml"
+  },
+  "va": {
+    "status": "wikidata_candidates_unverified",
+    "count": 1,
+    "path": "va.yaml"
+  },
+  "fo": {
+    "status": "wikidata_candidates_unverified",
+    "count": 0,
+    "path": "fo.yaml"
+  },
+  "ax": {
+    "status": "wikidata_candidates_unverified",
+    "count": 0,
+    "path": "ax.yaml"
+  },
+  "gg": {
+    "status": "wikidata_candidates_unverified",
+    "count": 1,
+    "path": "gg.yaml"
+  },
+  "je": {
+    "status": "wikidata_candidates_unverified",
+    "count": 0,
+    "path": "je.yaml"
+  },
+  "im": {
+    "status": "wikidata_candidates_unverified",
+    "count": 1,
+    "path": "im.yaml"
+  }
+}

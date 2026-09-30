@@ -1,0 +1,12 @@
+schema_version: 1
+country_iso2: "AX"
+international_vehicle_code: "AX"
+country_name_de: "Åland"
+geographic_rule: "requires_country_specific_validation"
+coverage: "wikidata_candidates_unverified"
+app_ready: false
+source_property: "https://www.wikidata.org/wiki/Property:P395"
+source_license: "CC0 1.0"
+generated_utc: "2026-09-30T18:52:51.454848+00:00"
+error: ""
+entries: []

@@ -1,0 +1,18 @@
+schema_version: 1
+country_iso2: "LV"
+international_vehicle_code: "LV"
+country_name_de: "Lettland"
+geographic_rule: "requires_country_specific_validation"
+coverage: "wikidata_candidates_unverified"
+app_ready: false
+source_property: "https://www.wikidata.org/wiki/Property:P395"
+source_license: "CC0 1.0"
+generated_utc: "2026-09-30T18:51:27.654798+00:00"
+error: ""
+entries:
+  - code: "LV"
+    place: "Lettland"
+    wikidata: "http://www.wikidata.org/entity/Q211"
+  - code: "LV"
+    place: "Riga"
+    wikidata: "http://www.wikidata.org/entity/Q1773"

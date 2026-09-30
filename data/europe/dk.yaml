@@ -1,0 +1,15 @@
+schema_version: 1
+country_iso2: "DK"
+international_vehicle_code: "DK"
+country_name_de: "Dänemark"
+geographic_rule: "requires_country_specific_validation"
+coverage: "wikidata_candidates_unverified"
+app_ready: false
+source_property: "https://www.wikidata.org/wiki/Property:P395"
+source_license: "CC0 1.0"
+generated_utc: "2026-09-30T18:50:17.574992+00:00"
+error: ""
+entries:
+  - code: "L"
+    place: "Kristianstads län"
+    wikidata: "http://www.wikidata.org/entity/Q339637"

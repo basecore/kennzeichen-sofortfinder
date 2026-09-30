@@ -1,0 +1,18 @@
+schema_version: 1
+country_iso2: "XK"
+international_vehicle_code: "RKS"
+country_name_de: "Kosovo"
+geographic_rule: "requires_country_specific_validation"
+coverage: "wikidata_candidates_unverified"
+app_ready: false
+source_property: "https://www.wikidata.org/wiki/Property:P395"
+source_license: "CC0 1.0"
+generated_utc: "2026-09-30T18:51:25.837803+00:00"
+error: ""
+entries:
+  - code: "01"
+    place: "Pristina"
+    wikidata: "http://www.wikidata.org/entity/Q25270"
+  - code: "PZ"
+    place: "Rapca"
+    wikidata: "http://www.wikidata.org/entity/Q3133619"

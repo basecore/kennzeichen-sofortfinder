@@ -1,0 +1,18 @@
+schema_version: 1
+country_iso2: "AD"
+international_vehicle_code: "AND"
+country_name_de: "Andorra"
+geographic_rule: "requires_country_specific_validation"
+coverage: "wikidata_candidates_unverified"
+app_ready: false
+source_property: "https://www.wikidata.org/wiki/Property:P395"
+source_license: "CC0 1.0"
+generated_utc: "2026-09-30T18:48:55.857363+00:00"
+error: ""
+entries:
+  - code: "AND"
+    place: "Andorra"
+    wikidata: "http://www.wikidata.org/entity/Q228"
+  - code: "C"
+    place: "Andorra la Vella"
+    wikidata: "http://www.wikidata.org/entity/Q1863"

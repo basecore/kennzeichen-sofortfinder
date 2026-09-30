@@ -1,0 +1,15 @@
+schema_version: 1
+country_iso2: "VA"
+international_vehicle_code: "V"
+country_name_de: "Vatikanstadt"
+geographic_rule: "requires_country_specific_validation"
+coverage: "wikidata_candidates_unverified"
+app_ready: false
+source_property: "https://www.wikidata.org/wiki/Property:P395"
+source_license: "CC0 1.0"
+generated_utc: "2026-09-30T18:52:48.908662+00:00"
+error: ""
+entries:
+  - code: "V"
+    place: "Vatikanstadt"
+    wikidata: "http://www.wikidata.org/entity/Q237"

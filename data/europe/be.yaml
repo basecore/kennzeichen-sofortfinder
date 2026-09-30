@@ -1,0 +1,15 @@
+schema_version: 1
+country_iso2: "BE"
+international_vehicle_code: "B"
+country_name_de: "Belgien"
+geographic_rule: "requires_country_specific_validation"
+coverage: "wikidata_candidates_unverified"
+app_ready: false
+source_property: "https://www.wikidata.org/wiki/Property:P395"
+source_license: "CC0 1.0"
+generated_utc: "2026-09-30T18:49:09.263620+00:00"
+error: ""
+entries:
+  - code: "B"
+    place: "Belgien"
+    wikidata: "http://www.wikidata.org/entity/Q31"
