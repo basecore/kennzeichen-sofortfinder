@@ -1,0 +1,15 @@
+{
+  "de": {
+    "count": 708,
+    "source": "https://raw.githubusercontent.com/offene-daten/kennzeichen/master/de.yaml"
+  },
+  "at": {
+    "count": 106,
+    "source": "https://raw.githubusercontent.com/offene-daten/kennzeichen/master/at.yaml"
+  },
+  "ch": {
+    "count": 30,
+    "source": "https://raw.githubusercontent.com/offene-daten/kennzeichen/master/ch.yaml"
+  },
+  "fetched_utc": "2026-09-30T17:26:54.369361+00:00"
+}
