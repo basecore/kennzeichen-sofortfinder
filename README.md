@@ -2,7 +2,7 @@
 
 **Version 2.0.0 · 30.09.2026** · [Web-App](https://basecore.github.io/kennzeichen-sofortfinder/) · [GitHub-Projekt](https://github.com/basecore/kennzeichen-sofortfinder)
 
-Smartphone-PWA für Kennzeichen: Deutschland ist vorausgewählt. Im Länder-Menü sind europäische Staaten und einige Sondergebiete mit Flagge und internationalem Länderkürzel aufgeführt. Auf der stilisierten Kennzeichenansicht steht der Ländercode links; nur für EU-Staaten wird statt der Landesflagge ein Sternsymbol verwendet. Dies ist eine Orientierungshilfe, keine exakte Reproduktion amtlicher Kennzeichen.
+Smartphone-PWA für Kennzeichen: Deutschland ist vorausgewählt. Im Länder-Menü sind europäische Staaten und einige Sondergebiete mit Flagge und internationalem Länderkürzel aufgeführt. Auf der stilisierten Kennzeichenansicht steht der Ländercode links; bei EU-Staaten steht ein Sternsymbol statt der Nationalflagge. Dies ist eine Orientierungshilfe, keine exakte Reproduktion amtlicher Kennzeichen.
 
 ## Bedienung und Wikipedia
 
@@ -12,7 +12,7 @@ Land wählen, mögliche Buchstaben antippen, Orts- oder Kreisbezeichnung lesen. 
 
 - **Deutschland, Österreich und Schweiz:** regionale Codes aus [offene-daten/kennzeichen](https://github.com/offene-daten/kennzeichen), CC0. Diese Länder werden beim ersten Öffnen mit Internet geladen und lokal gespeichert.
 - **Polen:** polnische Kreis- und Stadtkürzel werden nach Länderwechsel aus [Wikipedia, „Vehicle registration plates of Poland“](https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Poland) ausgelesen und lokal gespeichert. Wenn Wikipedia nicht erreichbar ist oder die Tabellenstruktur wechselt, zeigt die App deutlich gekennzeichnet nur eine kleine integrierte Auswahl häufiger Codes. Der Wikipedia-Inhalt steht unter [CC BY-SA](https://en.wikipedia.org/wiki/Wikipedia:Copyrights); Quelle und Beitragende über den verlinkten Artikel und dessen Versionsgeschichte.
-- **Ukraine:** regionale Kürzel aus der [Wikipedia-Übersicht](https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Ukraine), einschließlich unterschiedlicher Ausgabeserien. Codes können mehrfach belegt sein; dann werden mehrere Treffer angezeigt. Dies sind Regionen, nicht immer Städte.
+- **Ukraine:** regionale Kürzel aus der [Wikipedia-Übersicht](https://de.wikipedia.org/wiki/Kfz-Kennzeichen_(Ukraine)), mit den Standardpaaren von 2004 und 2013. Es sind überwiegend Oblaste, nicht Städte; historische und Sonderkennzeichen sind nicht enthalten.
 - **Italien:** Die normalen Serienbuchstaben aktueller Schilder verraten keinen Herkunftsort. Die App kennt nur ausgewählte, fakultative Provinzcodes vom **rechten** blauen Streifen, etwa MI; ein fehlender Eintrag ist keine Aussage über die Gültigkeit des Kennzeichens. [Hintergrund bei Wikipedia](https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Italy).
 - **Alle weiteren Länder im Menü:** Länderkennung und Flagge werden angezeigt; ohne belastbar integrierte Ortsdaten werden **keine Städte geraten**. Tippen auf das Schild öffnet Informationen zum jeweiligen Kennzeichensystem auf Wikipedia. Sonder-, historische und individuell gestaltete Kennzeichen können abweichen.
 
