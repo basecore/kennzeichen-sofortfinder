@@ -1,23 +1,21 @@
 # Kennzeichen-Sofortfinder Europa 🚗
 
-**Version 2.2.0 · 30.09.2026** · [Web-App](https://basecore.github.io/kennzeichen-sofortfinder/) · [GitHub-Projekt](https://github.com/basecore/kennzeichen-sofortfinder)
+**Version 2.3.0 · 30.09.2026** · [Web-App](https://basecore.github.io/kennzeichen-sofortfinder/) · [GitHub-Projekt](https://github.com/basecore/kennzeichen-sofortfinder)
 
-## Bedienung
+Die schnelle ABC-Suche nutzt die lokal gespeicherten Community-Listen `data/de.yaml`, `at.yaml` und `ch.yaml`. Deutschland ist voreingestellt. Das große Schild zeigt einen EU-Sternkreis statt einer zweiten Landesflagge; Ortsnamen sind vergrößert und nur die Ergebnisschilder führen zu Ortsartikeln oder einer spezifischen Wikipedia-Suche.
 
-Deutschland ist beim Start ausgewählt. Die Landesflagge steht **nur im Länder-Menü**; das stilisierte Schild zeigt bei EU-Ländern links einen gelben Sternkreis und das internationale Länderkürzel. Bei Nicht-EU-Ländern wird kein fälschliches EU-Symbol angezeigt. Tippe bis zu drei Buchstaben: die Liste zeigt sämtliche passenden Kürzel der geladenen Datenquelle, ohne die frühere Beschränkung auf 60 Starttreffer. Nicht mögliche nächste Buchstaben sind grau. Die Ortsnamen der Ergebnisschilder sind vergrößert; ein Tipp auf ein Ergebnis öffnet den Ort bei Wikipedia. Ein kleiner Pfeil ersetzt den wiederholten Schriftzug „Wikipedia“. Das große Schild oben ist kein Link.
+## Weitere Länder: separat gekennzeichneter Recherchemodus
 
-## Daten und Offline-Nutzung
+Die App verlinkt unter „Europa-Daten (Recherche)“ auf [research.html](https://basecore.github.io/kennzeichen-sofortfinder/research.html). Dort ist jedes im Länder-Menü enthaltene Land mit seiner lokalen YAML-Datei unter `data/europe/<iso>.yaml` verknüpft; DE/AT/CH nutzen die bestehenden Quelldateien. Die Länderdateien wurden aus Wikidatas Eigenschaft [P395](https://www.wikidata.org/wiki/Property:P395) generiert (CC0), sind aber `app_ready: false`: Es sind **unverifizierte Recherchekandidaten**, keine vollständig geprüften aktuell gültigen Ortslisten. Erst nach bewusstem Aktivieren der Warn-Checkbox werden sie sichtbar. Bei mehr als 100 Treffern werden aus Leistungsgründen zuerst 100 angezeigt; die Präfixsuche durchsucht trotzdem alle geladenen Einträge. Ein Tipp auf einen Kandidaten führt zu dessen Wikidata-Eintrag, nicht zu einem unbelegt geratenen Stadtartikel. Länder ohne nutzbaren Ortscode oder mit nicht erreichbarer Datenquelle zeigen einen Hinweis statt erfundener Orte. Besonders bei heutigen italienischen, spanischen und französischen Seriennummern kann aus den Zeichen kein verlässlicher Zulassungsort abgeleitet werden.
 
-Die vollständigen Quelldateien `data/de.yaml`, `data/at.yaml` und `data/ch.yaml` liegen **im selben GitHub-Repository** und werden durch [.github/workflows/vendor-plates.yml](https://github.com/basecore/kennzeichen-sofortfinder/blob/main/.github/workflows/vendor-plates.yml) aus [offene-daten/kennzeichen](https://github.com/offene-daten/kennzeichen) (CC0) übernommen und auf eine Mindestanzahl geprüft. Die App lädt diese Dateien direkt von GitHub Pages, nicht mehr aus GitHub Raw oder einem fremden CDN. Nach dem ersten erfolgreichen Laden wird die vollständige Liste auch im Browser gespeichert und offline verwendet. Eine kleine Notfallliste wird **nicht** mehr als vollständiger Bestand ausgegeben. Falls die lokale Datei auf GitHub Pages fehlt, zeigt die App einen konkreten Fehler samt Schaltfläche zum erneuten Laden statt elf Kürzel als vermeintliche Gesamtliste. `data/source.json` enthält Abrufzeit und Anzahl je Datei.
+`data/europe/manifest.json` nennt den Status und Umfang je Land; [data/europe/README.md](https://github.com/basecore/kennzeichen-sofortfinder/blob/main/data/europe/README.md) erläutert die methodischen Grenzen. Die normale ABC-Suche bleibt von ungeprüften Wikidata-Ergebnissen unberührt. Neue Quellen dürfen erst nach länderspezifischem Quellenabgleich als geprüft in die Hauptsuche integriert werden.
 
-Polnische Stadtkürzel werden weiterhin aus [Wikipedia](https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Poland) geladen und bei Erfolg lokal gespeichert; bei Nichterreichbarkeit ohne gespeicherte Komplettliste ist dort keine vollständige Ortsliste verfügbar. Wikipedia-Inhalte: [CC BY-SA](https://en.wikipedia.org/wiki/Wikipedia:Copyrights), Urheber über Versionsgeschichte des Artikels. Ukrainische Regionscodes liegen in der App. Für Italien sind nur einige optionale Provinzcodes vom rechten Rand bekannt; aktuelle Serienbuchstaben bezeichnen keinen Ort. Weitere Länder sind mit Ländercode und einem Informationslink auswählbar, aber ohne verifizierte Ortsdaten werden keine Orte erfunden.
+## Daten, Offline und Versionen
 
-Die CC0-Kürzelliste ist eine Community-Liste, nicht die amtlich vollständige KBA-Liste; neue oder historische Kürzel können fehlen. Für verbindliche Zuordnungen siehe die [KBA-Übersicht](https://www.kba.de/DE/Service/Kennzeichen/kennzeichen_node.html). Das App-Datum ist nicht das Aktualitätsdatum der Quelldaten. Nicht beim Fahren bedienen.
+Die lokalen DE/AT/CH-Daten stammen aus [offene-daten/kennzeichen](https://github.com/offene-daten/kennzeichen) unter CC0; vollständig im Sinn der Quelldatei, nicht zwingend amtlich tagesaktuell. Nach erstem erfolgreichen Laden werden sie lokal gespeichert. Polen wird in der normalen Suche aus Wikipedia geladen, Ukraine nutzt hinterlegte Regionscodes, Italien nur ausgewählte optionale Provinzcodes. Bei Länderrecherche lädt die App eine YAML-Datei aus dem eigenen GitHub-Pages-Projekt; besuchte Dateien kann der Service Worker zwischenspeichern. Nicht beim Fahren bedienen.
 
-## PWA und Versionsverlauf
+GitHub Pages unter [Settings → Pages](https://github.com/basecore/kennzeichen-sofortfinder/settings/pages) aus `main` und `/(root)` veröffentlichen.
 
-GitHub Pages unter [Settings → Pages](https://github.com/basecore/kennzeichen-sofortfinder/settings/pages) aus `main` und `/(root)` veröffentlichen. Der Service Worker lädt HTML bei Internetverbindung zuerst frisch und speichert danach die App-Oberfläche; das Skript trägt eine Versionskennung im Dateilink, damit veraltete JS-Dateien nicht dauerhaft geladen werden.
-
-- **2.2.0 · 30.09.2026:** Lokale Komplettlisten für DE/AT/CH; alle Treffer; größere Ortsnamen; EU-Symbol statt doppelter Flagge; dezenter Linkpfeil.
-- **2.1.1 · 30.09.2026:** Fehler bei der Ergebnisdarstellung behoben.
-- **2.1.0 · 30.09.2026:** Stadtlinks auf den Ergebnisschildern, nicht auf dem oberen Schild.
+- **2.3.0 · 30.09.2026:** Eigene, deutlich als ungeprüft markierte Europa-Recherche mit Links zu allen Länder-YAMLs.
+- **2.2.1 · 30.09.2026:** Korrektur des lokalen Dateipfads `D → de.yaml`, `A → at.yaml`.
+- **2.2.0 · 30.09.2026:** Lokale Listen DE/AT/CH, größere Treffer, EU-Sternkreis.
