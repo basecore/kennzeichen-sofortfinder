@@ -1,0 +1,3 @@
+# Kennzeichen-Daten
+
+`de.yaml`, `at.yaml` und `ch.yaml` werden durch `.github/workflows/vendor-plates.yml` aus [offene-daten/kennzeichen](https://github.com/offene-daten/kennzeichen) übernommen. Die Datenquelle steht unter [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). `source.json` protokolliert Abrufzeitpunkt, Dateiquelle und Anzahl der Kürzel. Diese Listen sind Community-Daten, nicht die amtliche aktuelle Liste; insbesondere historische und neu zugeteilte Kürzel bitte mit dem [KBA](https://www.kba.de/DE/Service/Kennzeichen/kennzeichen_node.html) abgleichen. Der Workflow bricht bei unvollständigen Quelldateien ab, statt die bestehende lokale Liste zu überschreiben.
