@@ -1,6 +1,6 @@
 # Kennzeichen-Sofortfinder Europa 🚗
 
-**Version 2.3.0 · 30.09.2026** · [Web-App](https://basecore.github.io/kennzeichen-sofortfinder/) · [GitHub-Projekt](https://github.com/basecore/kennzeichen-sofortfinder)
+**Version 2.3.1 · 10.01.2026** · [Web-App](https://basecore.github.io/kennzeichen-sofortfinder/) · [GitHub-Projekt](https://github.com/basecore/kennzeichen-sofortfinder)
 
 Die schnelle ABC-Suche nutzt die lokal gespeicherten Community-Listen `data/de.yaml`, `at.yaml` und `ch.yaml`. Deutschland ist voreingestellt. Das große Schild zeigt einen EU-Sternkreis statt einer zweiten Landesflagge; Ortsnamen sind vergrößert und nur die Ergebnisschilder führen zu Ortsartikeln oder einer spezifischen Wikipedia-Suche.
 
