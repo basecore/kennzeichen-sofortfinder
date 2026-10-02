@@ -1,1 +1,145 @@
-(()=>{'use strict';const KEY='kennzeichen-sofortfinder-history-v1';const button=document.getElementById('historyOpen');if(!button)return;const style=document.createElement('style');style.textContent=`.history-open{display:block;width:100%;min-height:40px;margin-top:8px;border:1px solid #acc1d7;border-radius:9px;background:#fff;color:#193955;font-weight:800}.history-dialog{width:min(92vw,600px);max-height:80dvh;padding:0;border:1px solid #acc1d7;border-radius:14px;background:#f7f9fc;color:#1b2e48;box-shadow:0 15px 45px #142b4755}.history-dialog::backdrop{background:#142b4788}.history-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;background:#142b47;color:#fff}.history-head h2{margin:0;font-size:1.05rem}.history-close{min-width:38px;min-height:38px;border:0;border-radius:9px;background:#dceafe;color:#183a61;font-size:1.4rem}.history-info{margin:12px 14px 4px;color:#536680;font-size:.82rem}.history-warning{margin:8px 14px;color:#684819;font-size:.82rem}.history-warning:empty{display:none}.history-list{max-height:56dvh;overflow:auto;margin:0;padding:10px 14px 14px;list-style:none}.history-item{display:flex;align-items:center;gap:12px;margin-bottom:7px;padding:10px;border:1px solid #d9e3ef;border-radius:11px;background:#fff}.history-badge{min-width:80px;border-left:7px solid #1769aa;border-radius:5px;padding:8px 5px;background:#f4f8ff;text-align:center;font-size:1.15rem;font-weight:850}.history-details{display:flex;flex-direction:column;gap:3px;min-width:0}.history-details small{color:#5d7188}`;document.head.append(style);const dialog=document.createElement('dialog');dialog.className='history-dialog';dialog.setAttribute('aria-labelledby','historyTitle');dialog.innerHTML='<div class="history-head"><h2 id="historyTitle">Kennzeichen-Verlauf</h2><button class="history-close" type="button" aria-label="Verlauf schließen">×</button></div><p class="history-info">Automatisch gelöschte Kürzel, neueste zuerst · nur auf diesem Gerät</p><p class="history-warning" role="status"></p><ol class="history-list"></ol>';document.body.append(dialog);const list=dialog.querySelector('.history-list'),warning=dialog.querySelector('.history-warning');let entries=[];try{const saved=JSON.parse(localStorage.getItem(KEY)||'[]');if(Array.isArray(saved))entries=saved}catch(e){warning.textContent='Gespeicherter Verlauf konnte nicht gelesen werden.';console.warn(e)}const format=new Intl.DateTimeFormat('de-DE',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});function render(){const fragment=document.createDocumentFragment();if(!entries.length){const empty=document.createElement('li');empty.className='empty';empty.textContent='Noch keine automatisch gelöschten Kürzel.';fragment.append(empty)}for(const entry of entries){const row=document.createElement('li'),badge=document.createElement('span'),detail=document.createElement('span'),title=document.createElement('strong'),country=document.createElement('small'),time=document.createElement('small');row.className='history-item';badge.className='history-badge';badge.textContent=(entry.countryCode||'')+' · '+entry.code;detail.className='history-details';title.textContent=entry.title||'Ort nicht eindeutig';country.textContent=((entry.flag||'')+' '+(entry.country||'')).trim();const date=new Date(entry.at);time.textContent=Number.isNaN(date.getTime())?'':format.format(date);detail.append(title,country,time);row.append(badge,detail);fragment.append(row)}list.replaceChildren(fragment)}window.addKennzeichenHistory=entry=>{if(!entry||!(/^[A-ZÄÖÜ]{1,3}$/.test(entry.code)))return;entries.unshift({code:entry.code,title:String(entry.title||''),countryCode:String(entry.countryCode||''),country:String(entry.country||''),flag:String(entry.flag||''),at:String(entry.at||new Date().toISOString())});try{localStorage.setItem(KEY,JSON.stringify(entries));warning.textContent=''}catch(e){warning.textContent='Verlauf konnte nicht dauerhaft gespeichert werden.';console.warn(e)}if(dialog.open)render()};button.addEventListener('click',()=>{render();dialog.showModal()});dialog.querySelector('.history-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>button.focus())})();
+// @ts-check
+
+const HISTORY_STORAGE_KEY = 'kennzeichen-sofortfinder-history-v1';
+
+/**
+ * @typedef {{
+ *   code: string;
+ *   title: string;
+ *   countryCode: string;
+ *   country: string;
+ *   flag: string;
+ *   at: string;
+ * }} HistoryEntry
+ */
+
+/**
+ * @returns {HistoryEntry[]}
+ */
+function getHistory() {
+  try {
+    const raw = localStorage.getItem(HISTORY_STORAGE_KEY);
+    if (!raw) return [];
+    /** @type {HistoryEntry[]} */
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * @param {HistoryEntry[]} entries
+ */
+function saveHistory(entries) {
+  localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(entries));
+}
+
+/**
+ * @param {HistoryEntry} entry
+ */
+function addHistoryEntry(entry) {
+  const entries = getHistory();
+  entries.unshift(entry);
+  // Keep only last 50 entries
+  while (entries.length > 50) entries.pop();
+  saveHistory(entries);
+}
+
+/**
+ * Format date as DD.MM.YYYY, HH:mm:ss
+ * @param {string} isoString
+ */
+function formatDateTime(isoString) {
+  const d = new Date(isoString);
+  const pad = (n) => String(n).padStart(2, '0');
+  return [
+    pad(d.getDate()),
+    pad(d.getMonth() + 1),
+    d.getFullYear(),
+    ', ',
+    pad(d.getHours()),
+    ':',
+    pad(d.getMinutes()),
+    ':',
+    pad(d.getSeconds())
+  ].join('');
+}
+
+/**
+ * Render history entries into the dialog
+ */
+function renderHistory() {
+  const container = document.getElementById('history-list');
+  if (!container) return;
+
+  const entries = getHistory();
+
+  if (entries.length === 0) {
+    container.innerHTML = '<p class="empty">Noch kein Verlauf.</p>';
+    return;
+  }
+
+  const html = entries.map(item => `
+    <div class="history-item">
+      <div class="history-line1">
+        <span class="history-code">${item.countryCode} · ${item.code}</span>
+      </div>
+      <div class="history-line2">${item.title}</div>
+      <div class="history-line3">${item.flag} ${item.country}</div>
+      <div class="history-line4">${formatDateTime(item.at)}</div>
+    </div>
+  `).join('');
+
+  container.innerHTML = html;
+}
+
+/**
+ * Show the history dialog
+ */
+function showKennzeichenHistory() {
+  const dialog = document.getElementById('history-dialog');
+  if (!dialog) return;
+  renderHistory();
+  dialog.showModal();
+}
+
+/**
+ * Hide the history dialog
+ */
+function hideKennzeichenHistory() {
+  const dialog = document.getElementById('history-dialog');
+  if (!dialog) return;
+  dialog.close();
+}
+
+/**
+ * Clear all history
+ */
+function clearKennzeichenHistory() {
+  saveHistory([]);
+  renderHistory();
+}
+
+// Expose to window for app.js
+window.addKennzeichenHistory = addHistoryEntry;
+window.showKennzeichenHistory = showKennzeichenHistory;
+window.hideKennzeichenHistory = hideKennzeichenHistory;
+window.clearKennzeichenHistory = clearKennzeichenHistory;
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => {
+  const closeBtn = document.getElementById('history-close');
+  const clearBtn = document.getElementById('history-clear');
+  const dialog = document.getElementById('history-dialog');
+
+  closeBtn?.addEventListener('click', hideKennzeichenHistory);
+  clearBtn?.addEventListener('click', clearKennzeichenHistory);
+
+  // Close on backdrop click
+  dialog?.addEventListener('click', (e) => {
+    if (e.target === dialog) {
+      hideKennzeichenHistory();
+    }
+  });
+});
